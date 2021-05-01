@@ -63,12 +63,12 @@ jobs:
         uses: Azure/k8s-deploy@v1.3
         with:
           manifests: |
-            k8s/mongodb/deploy.yaml
-            k8s/mongodb/service.yaml
+            k3d/mongodb/deploy.yaml
+            k3d/mongodb/service.yaml
             
       - name: Deploy WebApi
         uses: Azure/k8s-deploy@v1.3
         with:
           images: brunobizarri/api-produto-k3d:v${{github.run_number}}
           manifests: |
-            k8s/api/deploy-and-service.yaml
+            k3d/api/deploy-and-service.yaml
